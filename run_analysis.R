@@ -56,5 +56,6 @@ names(totalDataset) =c(found_col_names,"Activity","Subject")
 #5 From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
 all_avg = totalDataset %>% group_by(Activity,Subject) %>% summarize_all(mean)
-
+# dump to csv
+write.csv(all_avg,'AvgbyActivityandSubject.csv')
  
